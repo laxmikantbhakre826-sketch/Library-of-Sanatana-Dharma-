@@ -2,71 +2,71 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>✨ Happy Deepavali | Library of Sanatana Dharma ✨</title>
+<title>✨ Happy Deepavali | Library of Sanatana Dharma</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',sans-serif;background:#1a0a00;color:#fff;overflow-x:hidden;text-align:center}
-.hero{min-height:100vh;background:radial-gradient(circle at 50% 20%,#ff6b00 0%,#b71c1c 45%,#2a0a00 100%);padding:25px 15px 40px;position:relative}
-.stars{position:absolute;inset:0;overflow:hidden}
-.stars span{position:absolute;animation:fall 3s linear infinite;font-size:18px;opacity:.9}
-@keyframes fall{0%{transform:translateY(-20px);opacity:0}20%{opacity:1}100%{transform:translateY(100vh);opacity:0}}
-.top{font-size:12px;letter-spacing:3px;color:#ffd700;margin-top:10px}
-.diya-main{font-size:110px;filter:drop-shadow(0 0 25px #ffcc00);animation:glow 1.2s ease-in-out infinite alternate;margin:10px 0}
-@keyframes glow{from{transform:scale(1);filter:drop-shadow(0 0 15px #ffcc00)}to{transform:scale(1.08);filter:drop-shadow(0 0 35px #ffeb3b)}}
-h1{font-size:42px;line-height:1.1;background:linear-gradient(180deg,#fff59d,#ffd700,#ff9800);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 2px 20px rgba(0,0,0,.2)}
-.sub{font-size:19px;margin:14px 0 6px;color:#fff3e0}
-.shloka{font-size:20px;color:#ffe082;background:rgba(255,255,255,.12);display:inline-block;padding:10px 20px;border-radius:30px;border:1px solid rgba(255,215,0,.5);margin:12px 0}
-.shloka small{display:block;font-size:13px;color:#ffccbc;margin-top:4px}
-.diyas{font-size:38px;letter-spacing:8px;margin:18px 0;filter:drop-shadow(0 0 10px #ff9800)}
-.btn{display:inline-block;background:linear-gradient(135deg,#fff59d,#ffd700);color:#7b0000;font-weight:800;font-size:18px;padding:16px 30px;border-radius:50px;text-decoration:none;box-shadow:0 8px 25px rgba(255,215,0,.5);margin:10px 0}
-.btn2{display:inline-block;background:transparent;color:#fff;border:1px solid #ffd700;padding:12px 22px;border-radius:50px;text-decoration:none;font-size:15px;margin:6px}
-.cards{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:22px 0 5px}
-.card{background:rgba(255,255,255,.12);backdrop-filter:blur(5px);border:1px solid rgba(255,215,0,.4);border-radius:18px;padding:16px;width:105px}
-.card b{font-size:28px;display:block}
-.card span{font-size:12px;color:#ffe0b2}
-.footer{background:#fff8e1;color:#4e342e;padding:25px 15px}
-.footer b{color:#b71c1c}
-.rangoli{font-size:26px;letter-spacing:4px}
+body{background:#0d0200;color:#fff;font-family:sans-serif;text-align:center;overflow-x:hidden}
+canvas{position:fixed;inset:0;pointer-events:none;z-index:1}
+.wrap{position:relative;z-index:2;padding:20px 14px 40px;background:radial-gradient(circle at 50% 0%,#ff6a00 0%,#a41300 45%,#1a0500 100%);min-height:100vh}
+/* LIVE DIYA */
+.diya-box{margin:18px auto 5px;position:relative;width:180px;height:160px}
+.flame{width:32px;height:78px;background:linear-gradient(#fff700,#ff9800,#ff5722);border-radius:50% 50% 50% 50%/60% 60% 40% 40%;margin:0 auto;transform-origin:50% 100%;animation:flick .18s infinite alternate;box-shadow:0 0 40px 15px #ffcc00,0 0 90px 40px #ff6d00}
+@keyframes flick{0%{transform:scale(1) rotate(-2deg)}50%{transform:scale(1.08,1.15) rotate(2deg)}100%{transform:scale(.95,1.05) rotate(-1deg)}}
+.glow{width:150px;height:150px;background:radial-gradient(circle,rgba(255,200,0,.7),transparent 70%);position:absolute;top:-20px;left:15px;animation:glowPulse 1s infinite alternate}
+@keyframes glowPulse{from{opacity:.6}to{opacity:1}}
+.bowl{width:160px;height:55px;background:linear-gradient(#ff5722,#8d0000);border-radius:0 0 80px 80px;margin:-5px auto;position:relative;box-shadow:0 10px 20px rgba(0,0,0,.5);border-top:6px solid #ffd700}
+.bowl:before{content:"✦ ✦ ✦";position:absolute;top:15px;left:0;right:0;color:#ffd700;font-size:18px}
+h1{font-size:48px;line-height:1;background:linear-gradient(#fff59d,#ffd700,#ff9800);-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 4px 10px rgba(0,0,0,.4))}
+.sub{margin:14px 0;font-size:17px;line-height:1.5;color:#fff3e0}
+.shloka{display:inline-block;background:rgba(255,255,255,.15);border:1px solid #ffd700;padding:12px 22px;border-radius:30px;margin:10px 0}
+.shloka small{display:block;font-size:12px;color:#ffccbc;margin-top:4px}
+/* LIVE SMALL DIYAS */
+.row{display:flex;justify-content:center;gap:12px;margin:22px 0}
+.mini{font-size:10px}
+.mini i{display:block;width:18px;height:34px;background:linear-gradient(#fff700,#ff9800);border-radius:50%;margin:0 auto;animation:flick .22s infinite alternate;box-shadow:0 0 18px 6px #ffcc00}
+.mini b{display:block;width:42px;height:18px;background:#c62828;border-radius:0 0 20px 20px;border-top:3px solid #ffd700;margin-top:-2px}
+.btn{display:inline-block;background:linear-gradient(#fff59d,#ffd700);color:#7b0000;font-weight:900;padding:16px 28px;border-radius:50px;text-decoration:none;font-size:17px;box-shadow:0 10px 30px rgba(255,215,0,.6);margin:8px 0}
+.btn2{display:inline-block;border:1px solid #ffd700;color:#fff;padding:12px 22px;border-radius:50px;text-decoration:none;font-size:14px}
+.cards{display:flex;gap:10px;justify-content:center;margin-top:22px}
+.card{background:rgba(255,255,255,.12);border:1px solid rgba(255,215,0,.5);border-radius:16px;padding:14px;width:104px;font-size:12px}
+.card b{font-size:26px;display:block}
+.foot{background:#fff8e1;color:#4e342e;padding:22px}
 </style>
 </head>
 <body>
-<div class="hero">
-<div class="stars">
-<span style="left:5%;animation-delay:0s">✨</span>
-<span style="left:20%;animation-delay:.5s">🎆</span>
-<span style="left:35%;animation-delay:1s">✨</span>
-<span style="left:55%;animation-delay:.2s">🎇</span>
-<span style="left:70%;animation-delay:1.2s">✨</span>
-<span style="left:85%;animation-delay:.8s">🎆</span>
-<span style="left:92%;animation-delay:1.5s">✨</span>
-</div>
+<canvas id="fw"></canvas>
+<div class="wrap">
+<p style="font-size:11px;letter-spacing:3px;color:#ffd700">🪔 LIBRARY OF SANATANA DHARMA PRESENTS 🪔</p>
 
-<div class="top">🪔 LIBRARY OF SANATANA DHARMA PRESENTS 🪔</div>
-<div class="diya-main">🪔</div>
+<div class="diya-box"><div class="glow"></div><div class="flame"></div><div class="bowl"></div></div>
+
 <h1>Happy<br>Deepavali</h1>
 <p class="sub">May this festival of lights fill your life<br>with Happiness, Prosperity & Divine Wisdom</p>
 
-<div class="shloka">तमसो मा ज्योतिर्गमय
-<small>From Darkness, Lead Me To Light</small></div>
+<div class="shloka"><b style="font-size:20px">तमसो मा ज्योतिर्गमय</b><small>From Darkness, Lead Me To Light</small></div>
 
-<div class="diyas">🪔 🪔 🪔 🪔 🪔</div>
+<div class="row">
+<div class="mini"><i></i><b></b></div><div class="mini"><i style="animation-delay:.1s"></i><b></b></div><div class="mini"><i style="animation-delay:.2s"></i><b></b></div><div class="mini"><i style="animation-delay:.05s"></i><b></b></div><div class="mini"><i style="animation-delay:.15s"></i><b></b></div>
+</div>
 
 <a class="btn" href="index.html">📚 Enter Library of Sanatana Dharma →</a><br>
-<a class="btn2" href="https://wa.me/?text=Happy%20Deepavali%20🪔%20Visit%20Library%20of%20Sanatana%20Dharma">↗ Share Wishes on WhatsApp</a>
+<a class="btn2" href="https://wa.me/?text=Happy%20Deepavali%20🪔">↗ Share on WhatsApp</a>
 
 <div class="cards">
-<div class="card"><b>🕉️</b><span>Vedas &<br>Upanishads</span></div>
-<div class="card"><b>📖</b><span>Bhagavad<br>Gita</span></div>
-<div class="card"><b>🎧</b><span>Audio<br>Stories</span></div>
+<div class="card"><b>🕉️</b>Vedas &<br>Upanishads</div>
+<div class="card"><b>📖</b>Bhagavad<br>Gita</div>
+<div class="card"><b>🎧</b>Audio<br>Stories</div>
 </div>
-<p style="font-size:13px;opacity:.8;margin-top:15px;">✨ Shubh Deepavali • शुभ दीपावली ✨</p>
+<p style="margin-top:16px;font-size:13px">✨ Shubh Deepavali • शुभ दीपावली ✨</p>
 </div>
+<div class="foot"><b>- From Laxmikant Bhakre -</b><br>Library of Sanatana Dharma</div>
 
-<div class="footer">
-<div class="rangoli">🌸 🌼 🌺 🌼 🌸</div>
-<p style="margin:12px 0 5px;"><b>- From Laxmikant Bhakre -</b></p>
-<p style="font-size:14px;">Library of Sanatana Dharma</p>
-<p style="font-size:12px;color:#8d6e63;margin-top:8px;">Wishing You & Your Family A Very Happy & Prosperous Deepavali</p>
-</div>
+<script>
+const c=document.getElementById('fw'),x=c.getContext('2d');let W,H,P=[];
+function rs(){W=c.width=innerWidth;H=c.height=innerHeight}rs();addEventListener('resize',rs);
+function boom(){let bx=Math.random()*W,by=Math.random()*H*0.4,col=['#ffd700','#ff5722','#fff','#ff9800','#ff1744'][Math.floor(Math.random()*5)];for(let i=0;i<50;i++){let a=Math.random()*Math.PI*2,s=Math.random()*4+1;P.push({x:bx,y:by,vx:Math.cos(a)*s,vy:Math.sin(a)*s,l:1,c:col})}}
+setInterval(boom,700);
+(function loop(){x.clearRect(0,0,W,H);P=P.filter(p=>p.l>0);P.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=0.05;p.l-=0.015;x.globalAlpha=p.l;x.fillStyle=p.c;x.beginPath();x.arc(p.x,p.y,2.5,0,7);x.fill()});requestAnimationFrame(loop)})();
+</script>
 </body>
 </html>
